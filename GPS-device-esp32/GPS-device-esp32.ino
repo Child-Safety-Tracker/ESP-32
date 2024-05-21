@@ -28,7 +28,7 @@ void loop() {
   
   if (SerialPort.available() > 0){
     receivedLocation = SerialPort.readString();
-    SerialPort.println(receivedLocation);
+    //SerialPort.println(receivedLocation);
   }
     
   if ((millis() - lastTime) > timerDelay) {
@@ -39,7 +39,7 @@ void loop() {
       http.begin(client, locationPath);
 
       http.addHeader("Content-Type", "application/json");
-      int httpResponseCode = http.POST("");
+      int httpResponseCode = http.POST(receivedLocation);
 
       http.end();
     } else {
