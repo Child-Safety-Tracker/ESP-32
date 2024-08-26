@@ -37,11 +37,6 @@ void loop() {
         break;
       modifiedReceivedLocation += receivedLocation[i];
     }
-    // SerialPort.println(receivedLocation);
-    // }
-
-    // if ((millis() - lastTime) > timerDelay) {
-
 
     if (WiFi.status() == WL_CONNECTED) {
       Serial.println(modifiedReceivedLocation);
